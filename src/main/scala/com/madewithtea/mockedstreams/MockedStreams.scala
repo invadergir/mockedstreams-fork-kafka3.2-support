@@ -24,7 +24,6 @@ import org.apache.kafka.common.serialization.Serde
 import org.apache.kafka.streams.scala.StreamsBuilder
 import org.apache.kafka.streams.state.ValueAndTimestamp
 import org.apache.kafka.streams.{TestInputTopic, TestOutputTopic}
-import org.apache.kafka.streams.test.ConsumerRecordFactory
 import org.apache.kafka.streams.{
   StreamsConfig,
   Topology,

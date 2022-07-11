@@ -1,8 +1,8 @@
 lazy val commonSettings = Seq(
   organization := "com.madewithtea",
-  version := "3.9.0",
-  scalaVersion := "2.12.13",
-  crossScalaVersions := List("2.12.10", "2.13.1"),
+  version := "4.0.0",
+  scalaVersion := "2.13.8",
+  crossScalaVersions := List("2.12.10", "2.13.8"),
   description := "Topology Unit-Testing Library for Kafka Streams",
   organizationHomepage := Some(url("https://www.madewithtea.com")),
   scalacOptions := Seq("-deprecation","-feature")
@@ -10,7 +10,7 @@ lazy val commonSettings = Seq(
 
 val scalaTestVersion = "3.0.8"
 val rocksDBVersion = "5.18.4"
-val kafkaVersion = "2.7.0"
+val kafkaVersion = "3.2.0"
 
 lazy val kafka = Seq(
   "org.apache.kafka" % "kafka-clients" % kafkaVersion,
@@ -68,28 +68,29 @@ pomExtra :=
       </developer>
     </developers>
 
-micrositeName := "Mocked Streams"
-micrositeDescription := "Unit-Testing Topologies in Kafka Streams"
-micrositeUrl := "http://mockedstreams.madewithtea.com"
-micrositeBaseUrl := ""
-micrositeTheme := "pattern"
-micrositeDocumentationUrl := "/docs"
-micrositeGitterChannel := false
-micrositeDocumentationLabelDescription := "Documentation"
-micrositeCompilingDocsTool := WithMdoc
-micrositeDataDirectory := (resourceDirectory in Compile).value / "docs" / "data"
-micrositeGithubOwner := "jpzk"
-micrositeGithubRepo := "mockedstreams"
-micrositeAuthor := "Jendrik Poloczek"
-micrositeTwitter := "@madewithtea"
-micrositeTwitterCreator := "@madewithtea"
-micrositeCompilingDocsTool := WithMdoc
-micrositeShareOnSocial := true
-
-
-lazy val docs = project // new documentation project
-  .in(file("ms-docs")) // important: it must not be docs/
-  .dependsOn(mockedstreams)
-  .enablePlugins(MdocPlugin)
-
-enablePlugins(MicrositesPlugin)
+// disabled because it depends on 'tut' lib which is no longer available.  See https://github.com/tpolecat/tut
+//micrositeName := "Mocked Streams"
+//micrositeDescription := "Unit-Testing Topologies in Kafka Streams"
+//micrositeUrl := "http://mockedstreams.madewithtea.com"
+//micrositeBaseUrl := ""
+//micrositeTheme := "pattern"
+//micrositeDocumentationUrl := "/docs"
+//micrositeGitterChannel := false
+//micrositeDocumentationLabelDescription := "Documentation"
+//micrositeCompilingDocsTool := WithMdoc
+//micrositeDataDirectory := (resourceDirectory in Compile).value / "docs" / "data"
+//micrositeGithubOwner := "jpzk"
+//micrositeGithubRepo := "mockedstreams"
+//micrositeAuthor := "Jendrik Poloczek"
+//micrositeTwitter := "@madewithtea"
+//micrositeTwitterCreator := "@madewithtea"
+//micrositeCompilingDocsTool := WithMdoc
+//micrositeShareOnSocial := true
+//
+//
+//lazy val docs = project // new documentation project
+//  .in(file("ms-docs")) // important: it must not be docs/
+//  .dependsOn(mockedstreams)
+//  .enablePlugins(MdocPlugin)
+//
+//enablePlugins(MicrositesPlugin)
